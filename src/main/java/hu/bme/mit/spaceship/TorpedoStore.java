@@ -30,6 +30,13 @@ public class TorpedoStore {
     }
   }
 
+  /**
+  * Fires a desired amount of torpedoes at once. 
+  * The result is either a success and all torpedoes are fired, or a failure (like overheating) which results in no torpedoes fired.
+  * @param numberOfTorpedos the amount of torpedoes to shoot at once.
+  * @return true if the firing is successful, false if the launching failed.
+  * @throws IllegalArgumentException if the desired amount of torpedoes is either below 1 or above the currently available torpedo amount.
+  */
   public boolean fire(int numberOfTorpedos){
     if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
       throw new IllegalArgumentException("numberOfTorpedos");
